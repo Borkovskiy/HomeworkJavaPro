@@ -2,7 +2,7 @@ package ua.kiev.prog.chatRoom;
 
 
 public class ChatRoom {
-    String name;
+    private String name;
 
     public ChatRoom(String name) {
         this.name = name;
@@ -15,6 +15,7 @@ public class ChatRoom {
     public void setName(String name) {
         this.name = name;
     }
+
 
     @Override
     public String toString() {

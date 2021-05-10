@@ -37,11 +37,11 @@ public class Setting {
     public Setting(User user, Scanner scanner) {
         this.user = user;
         this.scanner = scanner;
-
+        this.th=new Thread(new GetThread(user.getLogin(), chatRoom));
 
     }
 
-    public void setting() throws IOException {
+    public void setting() throws IOException,NullPointerException {
         while (true) {
             System.out.println("Print \"/status\" for change status");
 
@@ -60,7 +60,7 @@ public class Setting {
             } else if (text.contains("enter/")) {
 
                 enterRoom(text);
-                th = new Thread(new GetThread(user.getLogin(), chatRoom));
+                th=new Thread(new GetThread(user.getLogin(), chatRoom));
                 th.setDaemon(true);
                 th.start();
 
